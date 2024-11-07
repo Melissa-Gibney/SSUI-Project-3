@@ -90,21 +90,8 @@ export class Transition {
     public match(evtType : EventType, regn? : Region) : boolean {
            
         // **** YOUR CODE HERE ****
-        if(this.onEvent.evtType === evtType)
-        {
-            if(regn !== undefined)
-            {
-                if(this.onEvent.region === regn)
-                {
-                    return true;
-                }
-                return false;
-            }
-            return true;
-        }
-        
-        // **** Remove this, it's just here to get this file to compile
-        return false;
+        //Determine if the transition event matches the input event by comparing the two directly
+        return this.onEvent.match(evtType, regn);
     }
     
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 

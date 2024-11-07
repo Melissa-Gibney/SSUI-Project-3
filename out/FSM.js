@@ -90,6 +90,7 @@ export class FSM {
     damage() {
         var _a;
         // **** YOUR CODE HERE ****
+        //Pass damage to the parent
         (_a = this.parent) === null || _a === void 0 ? void 0 : _a.damage();
     }
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -102,9 +103,7 @@ export class FSM {
         // state, region names in event specs, and region names in actions.
         // walk over all the transitions in all the states to get those bound
         // **** YOUR CODE HERE ****
-        let targetStates = [];
-        let regionNamesInEventSpecs = [];
-        let regionNamesInActions = [];
+        //Not really sure why this empty spot is here
         // start state is the first one
         // **** YOUR CODE HERE ****
         //Go through each state's transitions and bind the target states and regions
@@ -130,6 +129,7 @@ export class FSM {
     // region images to their original states.
     reset() {
         // **** YOUR CODE HERE ****
+        //Set the current state back to the start state
         this._currentState = this.startState;
     }
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 

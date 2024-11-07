@@ -75,6 +75,7 @@ export class Root {
         try {
 
             // **** YOUR CODE HERE ****
+            //Go through the children and save the drawing context, draw the child, then restore the drawing context
             this.children.forEach(child => {
                 ctx.save();
                 ctx.translate(child.x, child.y);

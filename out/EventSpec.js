@@ -58,7 +58,9 @@ export class EventSpec {
     // our region is undefined and region name is "*", we will match to any region.
     match(evtType, regn) {
         // **** YOUR CODE HERE ****
-        if (evtType === this.evtType) {
+        //If the event type matches the input event type and the event region matches the input region,
+        //or if the region can be anything, then return true, else return false
+        if ((evtType === this.evtType || evtType === 'any' || this.evtType === 'any') && evtType !== 'nevermatch' && this.evtType !== 'nevermatch') {
             if (this.region === undefined && this.regionName === "*") {
                 return true;
             }

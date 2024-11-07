@@ -56,6 +56,7 @@ export class FSMInteractor {
     get x() { return this._x; }
     set x(v) {
         // **** YOUR CODE HERE ****
+        //Set x to the new value and report damage
         if (this._x !== v) {
             this._x = v;
             this.damage();
@@ -64,6 +65,7 @@ export class FSMInteractor {
     get y() { return this._y; }
     set y(v) {
         // **** YOUR CODE HERE ****
+        //Set y to the new value and report damage
         if (this._y !== v) {
             this._y = v;
             this.damage();
@@ -84,6 +86,7 @@ export class FSMInteractor {
     get parent() { return this._parent; }
     set parent(v) {
         // **** YOUR CODE HERE ****
+        //Set the new parent and report damage
         if (!(this._parent === v)) {
             this.damage();
             this._parent = v;
@@ -103,6 +106,7 @@ export class FSMInteractor {
     damage() {
         var _a;
         // **** YOUR CODE HERE ****
+        //Pass damage to the parent
         (_a = this.parent) === null || _a === void 0 ? void 0 : _a.damage();
     }
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -115,6 +119,7 @@ export class FSMInteractor {
         if (!this.fsm)
             return;
         // **** YOUR CODE HERE ****
+        //For every region, save the current context, draw the region, then load the context
         const tempContext = ctx;
         this.fsm.regions.forEach(region => {
             tempContext.save();
@@ -140,8 +145,7 @@ export class FSMInteractor {
         // **** YOUR CODE HERE ****
         //Go through each region and add it to the picklist if it is picked by that region
         this.fsm.regions.forEach(region => {
-            if (region.pick(localX - region.x, localY - region.y)) //The coords here may be wrong
-             {
+            if (region.pick(localX - region.x, localY - region.y)) {
                 pickList.push(region);
             }
         });
@@ -171,8 +175,10 @@ export class FSMInteractor {
         if (this.fsm === undefined)
             return;
         // **** YOUR CODE HERE ****
+        //Keep track of current regions and events to execute
         let affectedRegions = this.pick(localX, localY);
         let eventsToExecute = [];
+        //Switch on the event and push any translated events into the eventsToExecute array
         switch (what) {
             case 'press':
                 {
@@ -182,6 +188,8 @@ export class FSMInteractor {
             case 'move':
                 {
                     //Check if a region has been exited or entered
+                    //There is definitely a better way to do this than having two nested for loops in a row, but it works
+                    //In the future I should just write a helper method
                     if (this.lastRegionsAffected !== affectedRegions) {
                         //Check if exiting an old region
                         //Loop through every past affected region
@@ -238,19 +246,23 @@ export class FSMInteractor {
                     break;
                 }
         }
+        //Act on all the exit events
         const exitLoopLength = this.exitedRegions.length;
         for (let i = 0; i < exitLoopLength; i++) {
             const curRegion = this.exitedRegions[this.exitedRegions.length - 1];
             (_a = this.fsm) === null || _a === void 0 ? void 0 : _a.actOnEvent('exit', curRegion);
             this.exitedRegions.pop();
         }
+        //Act on all the enter events
         const enterLoopLength = this.enteredRegions.length;
         for (let i = 0; i < enterLoopLength; i++) {
             const curRegion = this.enteredRegions[this.enteredRegions.length - 1];
             (_b = this.fsm) === null || _b === void 0 ? void 0 : _b.actOnEvent('enter', curRegion);
             this.enteredRegions.pop();
         }
+        //Update the past affected regions
         this.lastRegionsAffected = affectedRegions;
+        //Act on all the other events
         affectedRegions.forEach(region => {
             eventsToExecute.forEach(event => {
                 var _a;

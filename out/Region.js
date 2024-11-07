@@ -48,6 +48,7 @@ export class Region {
     get x() { return this._x; }
     set x(v) {
         // **** YOUR CODE HERE ****
+        //Set x to the new value and report damage
         if (this._x !== v) {
             this._x = v;
             this.damage();
@@ -56,6 +57,7 @@ export class Region {
     get y() { return this._y; }
     set y(v) {
         // **** YOUR CODE HERE ****
+        //Set y to the new value and report damage
         if (this._y !== v) {
             this._y = v;
             this.damage();
@@ -64,6 +66,7 @@ export class Region {
     get w() { return this._w; }
     set w(v) {
         // **** YOUR CODE HERE ****
+        //Set w to the new value and report damage
         if (this._w !== v) {
             this._w = v;
             this.damage();
@@ -72,6 +75,7 @@ export class Region {
     get h() { return this._h; }
     set h(v) {
         // **** YOUR CODE HERE ****
+        //Set h to the new value and report damage
         if (this._h !== v) {
             this._h = v;
             this.damage();
@@ -93,6 +97,8 @@ export class Region {
     get parent() { return this._parent; }
     set parent(v) {
         // **** YOUR CODE HERE ****
+        //Set the new parent and report damage
+        //Please let me know if damage reporting is not needed here
         if (this._parent !== v) {
             this._parent = v;
             this.damage();
@@ -124,6 +130,7 @@ export class Region {
     // coordinates of this object) should be considered "inside" or "over" this region.
     pick(localX, localY) {
         // **** YOUR CODE HERE ****
+        //Check if the point is inside the bounds
         if (localX >= 0 && localX <= this.w && localY >= 0 && localY <= this.h) {
             return true;
         }
@@ -140,6 +147,7 @@ export class Region {
         // if we have a valid loaded image, draw it
         if (this.loaded && !this.loadError && this.image) {
             // **** YOUR CODE HERE ****
+            //Clear anything previously drawn, then draw the new image
             ctx.clearRect(0, 0, this.w, this.h);
             ctx.drawImage(this.image, 0, 0);
         }
@@ -158,6 +166,7 @@ export class Region {
     damage() {
         var _a;
         // **** YOUR CODE HERE ****
+        //Pass damage to the parent
         (_a = this.parent) === null || _a === void 0 ? void 0 : _a.damage();
     }
     //. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .

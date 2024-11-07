@@ -167,6 +167,7 @@ export class FSM {
     public damage() : void {
             
         // **** YOUR CODE HERE ****
+        //Pass damage to the parent
         this.parent?.damage();
 
     }
@@ -184,9 +185,7 @@ export class FSM {
             
         // **** YOUR CODE HERE ****
 
-        let targetStates: State[] = [];
-        let regionNamesInEventSpecs: string[] = [];
-        let regionNamesInActions: string[] = [];
+        //Not really sure why this empty spot is here
 
         // start state is the first one
             
@@ -221,6 +220,7 @@ export class FSM {
     public reset() {
             
         // **** YOUR CODE HERE ****
+        //Set the current state back to the start state
         this._currentState = this.startState;
     }
     

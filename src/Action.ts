@@ -84,6 +84,7 @@ export class Action {
         if (this._actType === 'none') return;
 
         // **** YOUR CODE HERE ****
+        //Switch on the action type and compare it to the actionTypeStrings
         switch(this.actType)
         {
             case actionTypeStrings[0]:
@@ -112,9 +113,8 @@ export class Action {
             }
             case actionTypeStrings[4]:
             {
-                //Print the event
-                console.log(this.param);
-                console.log(">" + evtType + "(" + evtReg?.name + ")");
+                //Print the parameter and the event
+                console.log(this.param + "\n>" + evtType + "(" + (evtReg?.name ?? "none") + ")");
                 break;
             }
             default:

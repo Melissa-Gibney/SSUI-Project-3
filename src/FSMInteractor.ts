@@ -59,6 +59,7 @@ export class FSMInteractor {
     public set x(v : number) {
           
         // **** YOUR CODE HERE ****
+        //Set x to the new value and report damage
         if(this._x !== v)
         {
             this._x = v;
@@ -73,6 +74,7 @@ export class FSMInteractor {
     public set y(v : number) {
             
         // **** YOUR CODE HERE ****
+        //Set y to the new value and report damage
         if(this._y !== v)
         {
             this._y = v;
@@ -102,6 +104,7 @@ export class FSMInteractor {
     public set parent(v : Root | undefined) {
             
         // **** YOUR CODE HERE ****
+        //Set the new parent and report damage
         if(!(this._parent === v))
         {
             this.damage();
@@ -128,6 +131,7 @@ export class FSMInteractor {
     public damage() {
            
         // **** YOUR CODE HERE ****
+        //Pass damage to the parent
         this.parent?.damage();
     }
     
@@ -142,6 +146,7 @@ export class FSMInteractor {
         if (!this.fsm) return;
 
         // **** YOUR CODE HERE ****
+        //For every region, save the current context, draw the region, then load the context
         const tempContext = ctx;
         this.fsm.regions.forEach(region => {
             tempContext.save();
@@ -170,7 +175,7 @@ export class FSMInteractor {
         // **** YOUR CODE HERE ****
         //Go through each region and add it to the picklist if it is picked by that region
         this.fsm.regions.forEach(region => {
-            if(region.pick(localX - region.x, localY - region.y))//The coords here may be wrong
+            if(region.pick(localX - region.x, localY - region.y))
             {
                 pickList.push(region);
             }
@@ -213,9 +218,11 @@ export class FSMInteractor {
         if (this.fsm === undefined) return;
 
         // **** YOUR CODE HERE ****
+        //Keep track of current regions and events to execute
         let affectedRegions: Region[] = this.pick(localX, localY);
         let eventsToExecute: EventType[] = [];
 
+        //Switch on the event and push any translated events into the eventsToExecute array
         switch(what)
         {
             case 'press':
@@ -226,6 +233,8 @@ export class FSMInteractor {
             case 'move':
             {
                 //Check if a region has been exited or entered
+                //There is definitely a better way to do this than having two nested for loops in a row, but it works
+                //In the future I should just write a helper method
                 if(this.lastRegionsAffected !== affectedRegions)
                 {
                     //Check if exiting an old region
@@ -297,6 +306,7 @@ export class FSMInteractor {
             }
         }
 
+        //Act on all the exit events
         const exitLoopLength = this.exitedRegions.length;
         for(let i = 0; i < exitLoopLength; i++)
         {
@@ -305,6 +315,7 @@ export class FSMInteractor {
             this.exitedRegions.pop();
         }
 
+        //Act on all the enter events
         const enterLoopLength = this.enteredRegions.length;
         for(let i = 0; i < enterLoopLength; i++)
         {
@@ -313,8 +324,10 @@ export class FSMInteractor {
             this.enteredRegions.pop();
         }
 
+        //Update the past affected regions
         this.lastRegionsAffected = affectedRegions;
 
+        //Act on all the other events
         affectedRegions.forEach(region => {
             eventsToExecute.forEach(event => {
                 this.fsm?.actOnEvent(event, region);

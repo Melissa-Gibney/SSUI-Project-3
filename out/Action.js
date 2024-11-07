@@ -29,9 +29,11 @@ export class Action {
     // Carry out the action represented by this object.  evtType and evtReg describe
     // the event which is causing the action (for use by print_event actions).
     execute(evtType, evtReg) {
+        var _a;
         if (this._actType === 'none')
             return;
         // **** YOUR CODE HERE ****
+        //Switch on the action type and compare it to the actionTypeStrings
         switch (this.actType) {
             case actionTypeStrings[0]:
                 {
@@ -57,9 +59,8 @@ export class Action {
                 }
             case actionTypeStrings[4]:
                 {
-                    //Print the event
-                    console.log(this.param);
-                    console.log(">" + evtType + "(" + (evtReg === null || evtReg === void 0 ? void 0 : evtReg.name) + ")");
+                    //Print the parameter and the event
+                    console.log(this.param + "\n>" + evtType + "(" + ((_a = evtReg === null || evtReg === void 0 ? void 0 : evtReg.name) !== null && _a !== void 0 ? _a : "none") + ")");
                     break;
                 }
             default:

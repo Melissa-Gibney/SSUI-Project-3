@@ -93,6 +93,7 @@ export class Region {
     public set x(v : number) {
             
         // **** YOUR CODE HERE ****
+        //Set x to the new value and report damage
         if(this._x !== v)
         {
             this._x = v;
@@ -108,6 +109,7 @@ export class Region {
     public set y(v : number) {
             
         // **** YOUR CODE HERE ****
+        //Set y to the new value and report damage
         if(this._y !== v)
         {
             this._y = v;
@@ -124,6 +126,7 @@ export class Region {
     public set w(v : number) {
             
         // **** YOUR CODE HERE ****
+        //Set w to the new value and report damage
         if(this._w !== v)
         {
             this._w = v;
@@ -140,6 +143,7 @@ export class Region {
     public set h(v : number) {
             
         // **** YOUR CODE HERE ****
+        //Set h to the new value and report damage
         if(this._h !== v)
         {
             this._h = v;
@@ -176,6 +180,8 @@ export class Region {
     public set parent(v : FSM | undefined) {
             
         // **** YOUR CODE HERE ****
+        //Set the new parent and report damage
+        //Please let me know if damage reporting is not needed here
         if(this._parent !== v)
         {
             this._parent = v;
@@ -244,6 +250,7 @@ export class Region {
     public pick(localX : number, localY : number) : boolean {
             
         // **** YOUR CODE HERE ****
+        //Check if the point is inside the bounds
         if(localX >= 0 && localX <= this.w && localY >= 0 && localY <= this.h)
         {
             return true;
@@ -264,6 +271,7 @@ export class Region {
         if (this.loaded && !this.loadError && this.image) {
                
             // **** YOUR CODE HERE ****
+            //Clear anything previously drawn, then draw the new image
             ctx.clearRect(0, 0, this.w, this.h);
             ctx.drawImage(this.image, 0, 0);
         }
@@ -285,6 +293,7 @@ export class Region {
     public damage() {
             
         // **** YOUR CODE HERE ****
+        //Pass damage to the parent
         this.parent?.damage();
     }
 

@@ -81,7 +81,7 @@ function test3() {
 // Lets you navigate forwards and backwards through the frames of animation of a character walking.
 //All of the pixel art (character animation and arrows were made by me)
 //I wanted to include a background, but I quickly realized that I can't layer regions
-//without having them cover each other up, even if they are transparent normally.
+//without having them cover each other up, even if the images are transparent.
 function customTest() {
 	let fsmInt = new FSMInteractor(undefined, 0, 300);
 	root.addChild(fsmInt);
