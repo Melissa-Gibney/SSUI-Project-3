@@ -1,0 +1,393 @@
+{
+    "regions": [
+	{ "name": "frame_img", "x": 0, "y": 0, "w": 320, "h": 360, "imageLoc": "./images/character_frame_1.png"},
+
+        { "name": "arrowForward", "x": 200, "y": 360, "w":80, "h":80, "imageLoc": "./images/arrow_forward.png"},
+	{ "name": "arrowBack", "x": 40, "y": 360, "w":80, "h":80, "imageLoc": "./images/arrow_back.png"}
+    ], 
+    "states":[
+        { "name" : "frame_1",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "arrowForward"},
+                "target": "frame_2", 
+                "actions": [{"act": "print", "param": "Frame 2"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_2.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowForward"},
+                "target": "frame_2",
+                "actions": [{"act": "print", "param": "Frame 2"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_2.png"}]
+                },
+
+                { "onEvent": {"evtType": "release", "region": "arrowBack"},
+                "target": "frame_12", 
+                "actions": [{"act": "print", "param": "Frame 12"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_12.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowBack"},
+                "target": "frame_12",
+                "actions": [{"act": "print", "param": "Frame 12"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_12.png"}]
+                }
+            ]
+        },
+
+        { "name" : "frame_2",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "arrowForward"},
+                "target": "frame_3", 
+                "actions": [{"act": "print", "param": "Frame 3"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_3.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowForward"},
+                "target": "frame_3",
+                "actions": [{"act": "print", "param": "Frame 3"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_3.png"}]
+                },
+
+                { "onEvent": {"evtType": "release", "region": "arrowBack"},
+                "target": "frame_1", 
+                "actions": [{"act": "print", "param": "Frame 1"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_1.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowBack"},
+                "target": "frame_1",
+                "actions": [{"act": "print", "param": "Frame 1"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_1.png"}]
+                }
+            ]
+        },
+
+        { "name" : "frame_3",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "arrowForward"},
+                "target": "frame_4", 
+                "actions": [{"act": "print", "param": "Frame 4"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_4.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowForward"},
+                "target": "frame_4",
+                "actions": [{"act": "print", "param": "Frame 4"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_4.png"}]
+                },
+
+                { "onEvent": {"evtType": "release", "region": "arrowBack"},
+                "target": "frame_2", 
+                "actions": [{"act": "print", "param": "Frame 2"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_2.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowBack"},
+                "target": "frame_2",
+                "actions": [{"act": "print", "param": "Frame 2"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_2.png"}]
+                }
+            ]
+        },
+
+        { "name" : "frame_4",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "arrowForward"},
+                "target": "frame_5", 
+                "actions": [{"act": "print", "param": "Frame 5"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_5.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowForward"},
+                "target": "frame_5",
+                "actions": [{"act": "print", "param": "Frame 5"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_5.png"}]
+                },
+
+                { "onEvent": {"evtType": "release", "region": "arrowBack"},
+                "target": "frame_3", 
+                "actions": [{"act": "print", "param": "Frame 3"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_3.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowBack"},
+                "target": "frame_3",
+                "actions": [{"act": "print", "param": "Frame 3"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_3.png"}]
+                }
+            ]
+        },
+
+        { "name" : "frame_5",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "arrowForward"},
+                "target": "frame_6", 
+                "actions": [{"act": "print", "param": "Frame 6"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_6.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowForward"},
+                "target": "frame_6",
+                "actions": [{"act": "print", "param": "Frame 6"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_6.png"}]
+                },
+
+                { "onEvent": {"evtType": "release", "region": "arrowBack"},
+                "target": "frame_4", 
+                "actions": [{"act": "print", "param": "Frame 4"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_4.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowBack"},
+                "target": "frame_4",
+                "actions": [{"act": "print", "param": "Frame 4"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_4.png"}]
+                }
+            ]
+        },
+
+        { "name" : "frame_6",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "arrowForward"},
+                "target": "frame_7", 
+                "actions": [{"act": "print", "param": "Frame 7"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_7.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowForward"},
+                "target": "frame_7",
+                "actions": [{"act": "print", "param": "Frame 7"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_7.png"}]
+                },
+
+                { "onEvent": {"evtType": "release", "region": "arrowBack"},
+                "target": "frame_5", 
+                "actions": [{"act": "print", "param": "Frame 5"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_5.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowBack"},
+                "target": "frame_5",
+                "actions": [{"act": "print", "param": "Frame 5"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_5.png"}]
+                }
+            ]
+        },
+
+        { "name" : "frame_7",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "arrowForward"},
+                "target": "frame_8", 
+                "actions": [{"act": "print", "param": "Frame 8"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_8.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowForward"},
+                "target": "frame_8",
+                "actions": [{"act": "print", "param": "Frame 8"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_8.png"}]
+                },
+
+                { "onEvent": {"evtType": "release", "region": "arrowBack"},
+                "target": "frame_6", 
+                "actions": [{"act": "print", "param": "Frame 6"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_6.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowBack"},
+                "target": "frame_6",
+                "actions": [{"act": "print", "param": "Frame 6"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_6.png"}]
+                }
+            ]
+        },
+        
+        { "name" : "frame_8",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "arrowForward"},
+                "target": "frame_9", 
+                "actions": [{"act": "print", "param": "Frame 9"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_9.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowForward"},
+                "target": "frame_9",
+                "actions": [{"act": "print", "param": "Frame 9"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_9.png"}]
+                },
+
+                { "onEvent": {"evtType": "release", "region": "arrowBack"},
+                "target": "frame_7", 
+                "actions": [{"act": "print", "param": "Frame 7"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_7.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowBack"},
+                "target": "frame_7",
+                "actions": [{"act": "print", "param": "Frame 7"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_7.png"}]
+                }
+            ]
+        },
+
+        { "name" : "frame_9",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "arrowForward"},
+                "target": "frame_10", 
+                "actions": [{"act": "print", "param": "Frame 10"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_10.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowForward"},
+                "target": "frame_10",
+                "actions": [{"act": "print", "param": "Frame 10"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_10.png"}]
+                },
+
+                { "onEvent": {"evtType": "release", "region": "arrowBack"},
+                "target": "frame_8", 
+                "actions": [{"act": "print", "param": "Frame 8"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_8.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowBack"},
+                "target": "frame_8",
+                "actions": [{"act": "print", "param": "Frame 8"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_8.png"}]
+                }
+            ]
+        },
+
+	{ "name" : "frame_10",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "arrowForward"},
+                "target": "frame_11", 
+                "actions": [{"act": "print", "param": "Frame 11"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_11.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowForward"},
+                "target": "frame_11",
+                "actions": [{"act": "print", "param": "Frame 11"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_11.png"}]
+                },
+
+                { "onEvent": {"evtType": "release", "region": "arrowBack"},
+                "target": "frame_9", 
+                "actions": [{"act": "print", "param": "Frame 9"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_9.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowBack"},
+                "target": "frame_9",
+                "actions": [{"act": "print", "param": "Frame 9"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_9.png"}]
+                }
+            ]
+        },
+
+	{ "name" : "frame_11",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "arrowForward"},
+                "target": "frame_12", 
+                "actions": [{"act": "print", "param": "Frame 12"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_12.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowForward"},
+                "target": "frame_12",
+                "actions": [{"act": "print", "param": "Frame 12"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_12.png"}]
+                },
+
+                { "onEvent": {"evtType": "release", "region": "arrowBack"},
+                "target": "frame_10", 
+                "actions": [{"act": "print", "param": "Frame 10"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_10.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowBack"},
+                "target": "frame_10",
+                "actions": [{"act": "print", "param": "Frame 10"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_10.png"}]
+                }
+            ]
+        },
+
+	{ "name" : "frame_12",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "arrowForward"},
+                "target": "frame_1", 
+                "actions": [{"act": "print", "param": "Frame 1"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_1.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowForward"},
+                "target": "frame_1",
+                "actions": [{"act": "print", "param": "Frame 1"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_1.png"}]
+                },
+
+                { "onEvent": {"evtType": "release", "region": "arrowBack"},
+                "target": "frame_11", 
+                "actions": [{"act": "print", "param": "Frame 11"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_11.png"}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "arrowBack"},
+                "target": "frame_11",
+                "actions": [{"act": "print", "param": "Frame 11"},
+			{"act": "clear_image", "region": "frame_img"},
+                        {"act": "set_image", "region": "frame_img", "param": "./images/character_frame_11.png"}]
+                }
+            ]
+        }
+    ]
+}
